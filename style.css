@@ -1,0 +1,77 @@
+.ability {
+    margin-left: 43%;
+    text-align: center;
+    text-transform: capitalize;
+    width: 13%;
+}
+
+.container {
+    text-align: center;
+}
+
+.pokemon {
+    font-weight: bold;
+    font-size: 275%;
+    margin-top: 5%;
+    text-transform: capitalize;
+}
+
+.pokemon-stats {
+    margin-top: 8%;
+}
+
+.stats {
+    width: 52%;
+}
+
+.stat-name  {
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+    margin-right: -1px;
+    padding: 2%;
+}
+
+.stat-data {
+    display: inline-block;
+    width: 10%;
+    text-align: center;
+    padding: 2%;
+}
+
+.stat-header {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 110%;
+    width: 40%; 
+    text-align: center;
+    text-decoration: underline;
+    margin-right: -1px;
+    padding: 2%;
+    
+}
+
+.data-header {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 110%;
+    width: 10%;
+    text-align: center;
+    text-decoration: underline;
+    padding: 2%;
+}
+
+.pokemon-image {
+    width: 40%;
+    float: left;
+    margin-right: -10%;
+    margin-left: 10%;
+}
+
+body {
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+.type-header {
+    text-transform: capitalize;
+}
