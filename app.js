@@ -12,6 +12,7 @@ function submitPokemon(){
     var inputPokemon = document.getElementsByClassName("tt-input")[0];
     var submittedPokemon = inputPokemon.value.toLowerCase();
     getPokemon(submittedPokemon)
+    deleteResults();
     $(loading).show();
 }
 
@@ -19,7 +20,6 @@ function getPokemon(pokemonName){
     $.get(apiurl(pokemonName), function(description){
         $(loading).hide();
         console.log(description)
-        deleteResults()
         displayDetails(description)
         displayStats(description.stats)
         displayPokemon(description.name)
@@ -33,20 +33,20 @@ function displayPokemon(pokemonDetail){
 function displayDetails(pokemonDescription){
     var pokemonAbilities = pokemonDescription.abilities;
     var pokemonType = pokemonDescription.types[0].type.name;
-    var pokemonHeight = pokemonDescription.height;
-    var pokemonWeight = pokemonDescription.weight;
+    var pokemonHeight = Math.round((pokemonDescription.height * 10)/30.48);
+    var pokemonWeight = Math.round(pokemonDescription.weight * .22);
     var pokemonImage = pokemonDescription.sprites["front_default"];
 
     var height =`
         <div class= "height-info">
-            <h3>Height: ${pokemonHeight} inches</h3>
+            <h3>Height: ${pokemonHeight} ft</h3>
         </div>
     `
     pokemonResults.innerHTML += height
 
     var weight =`
         <div class = "weight-info">
-            <h3>Weight: ${pokemonWeight} Kilograms</h3>
+            <h3>Weight: ${pokemonWeight} lbs</h3>
         </div>
         `
     pokemonResults.innerHTML += weight
@@ -151,7 +151,7 @@ var substringMatcher = function(strs) {
     };
   };
 
-var pokemonList = ["Bulbasaur", "Ivysaur", "Venusaur", "Mega Venusaur","Charmander", "Charmeleon", "Charizard", "Mega Charizard X", "Mega Charizard Y", "Squirtle",
+var pokemonList = ["Bulbasaur", "Ivysaur", "Venusaur", "Mega Venusaur","Charmander", "Charmeleon", "Charizard", "Squirtle",
 "Wartortle", "Blastoise", "Mega Blastoise", "Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Mega Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Mega Pidgeot", 
 "Rattata","Raticate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidoran", "Nidorina", "Nidoqueen", "Nidoran","Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix", "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat", 
 "Oddish", "Gloom", "Vileplume", "Paras", "Parasect", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", "Primeape", "Growlithe", "Arcanine", "Poliwag", 

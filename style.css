@@ -7,7 +7,7 @@
 
 .loading-animation {
     display: none;
-    width: 50px;
+    width: 200px;
     position: relative;
     top: 100px; 
 }
