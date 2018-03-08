@@ -9,15 +9,18 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+    <script src="typehead.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Shadows+Into+Light+Two" rel="stylesheet"></head>
 <body>
 <div class= "container">
     <div class= "header">
         <h1>Pokemon</h1>
-        <input class="search" type="text" autofocus>
+        <div id = "the-basics">
+            <input class="typeahead" type="text" placeholder="Pokemon Name" autofocus>
+        </div>
         <button class="submit">Submit</button>
     </div>
-
+    <img class="loading-animation" src="http://www.ajaxload.info/cache/FF/FF/FF/00/00/00/1-0.gif" />
     <div class="pokemon">
 
     </div>
